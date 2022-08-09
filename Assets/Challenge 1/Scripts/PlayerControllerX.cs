@@ -11,17 +11,14 @@ public class PlayerControllerX : MonoBehaviour
     private float verticalInput;
     private float horizontalInput;
 
-    // Start is called before the first frame update
     void Start()
     {
         plane = GameObject.Find("Plane");
         fan = GameObject.Find("Fan");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //transform.Translate(1, 0, 0);
         // get the user's vertical input
         verticalInput = Input.GetAxis("Vertical");
 
@@ -36,6 +33,5 @@ public class PlayerControllerX : MonoBehaviour
 
         // tilt the plane up/down based on up/down arrow keys
         plane.transform.Rotate(Vector3.right, Time.deltaTime * rotationSpeed * horizontalInput);
-        
     }
 }
